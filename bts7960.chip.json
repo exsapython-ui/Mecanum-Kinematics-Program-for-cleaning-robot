@@ -1,0 +1,9 @@
+{
+  "name": "BTS7960 Motor Driver",
+  "author": "Nama Anda",
+  "pins": ["RPWM", "LPWM", "R_EN", "L_EN", "R_IS", "L_IS", "VCC", "GND", "B+", "B-", "M+", "M-"],
+  "controls": [
+    { "id": "loadA", "label": "Load current (A)", "type": "slider", "min": 0, "max": 43, "step": 0.5 }
+  ],
+  "display": { "width": 160, "height": 80 }
+}
