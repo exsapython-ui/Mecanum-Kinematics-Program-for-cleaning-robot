@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "author": "Anda",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-c6-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "chip-bts7960", "id": "drv_fl", "top": 0, "left": 280, "attrs": { "loadA": "5" } },
+    {
+      "type": "chip-dc-motor-encoder",
+      "id": "mot_fl",
+      "top": 0,
+      "left": 620,
+      "attrs": { "maxRpm": "200", "ppr": "11", "tauMs": "80" }
+    },
+    { "type": "chip-bts7960", "id": "drv_fr", "top": 230, "left": 280, "attrs": { "loadA": "5" } },
+    {
+      "type": "chip-dc-motor-encoder",
+      "id": "mot_fr",
+      "top": 230,
+      "left": 620,
+      "attrs": { "maxRpm": "200", "ppr": "11", "tauMs": "80" }
+    },
+    { "type": "chip-bts7960", "id": "drv_rl", "top": 460, "left": 280, "attrs": { "loadA": "5" } },
+    {
+      "type": "chip-dc-motor-encoder",
+      "id": "mot_rl",
+      "top": 460,
+      "left": 620,
+      "attrs": { "maxRpm": "200", "ppr": "11", "tauMs": "80" }
+    },
+    { "type": "chip-bts7960", "id": "drv_rr", "top": 690, "left": 280, "attrs": { "loadA": "5" } },
+    {
+      "type": "chip-dc-motor-encoder",
+      "id": "mot_rr",
+      "top": 690,
+      "left": 620,
+      "attrs": { "maxRpm": "200", "ppr": "11", "tauMs": "80" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": -48,
+      "left": 652.8,
+      "attrs": { "text": "FRONT LEFT" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": 192,
+      "left": 652.8,
+      "attrs": { "text": "FRONT RIGHT" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text4",
+      "top": 422.4,
+      "left": 662.4,
+      "attrs": { "text": "REAR LEFT" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text5",
+      "top": 633.6,
+      "left": 662.4,
+      "attrs": { "text": "REAR RIGHT" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:0", "drv_fl:RPWM", "green", [ "h-91.88", "v-82.13" ] ],
+    [ "esp:1", "drv_fl:LPWM", "green", [ "h-82.28", "v-82.13" ] ],
+    [ "esp:3V3", "drv_fl:R_EN", "red", [ "v0" ] ],
+    [ "esp:3V3", "drv_fl:L_EN", "red", [ "v0" ] ],
+    [ "esp:3V3", "drv_fl:VCC", "red", [ "h-34.28", "v-42.71", "h471.56" ] ],
+    [ "esp:5V", "drv_fl:B+", "red", [ "h-245.48", "v-157.91", "h682.76" ] ],
+    [ "drv_fl:M+", "mot_fl:IN1", "green", [ "v0" ] ],
+    [ "drv_fl:M-", "mot_fl:IN2", "green", [ "v0" ] ],
+    [ "esp:5V", "mot_fl:VCC", "red", [ "h-235.88", "v-149.33" ] ],
+    [ "esp:2", "mot_fl:ENCA", "green", [ "h-226.28", "v-120.53" ] ],
+    [ "esp:3", "mot_fl:ENCB", "green", [ "h-216.68", "v-167.51", "h993.96" ] ],
+    [ "esp:6", "drv_fr:RPWM", "blue", [ "h-207.08", "v167.07" ] ],
+    [ "esp:7", "drv_fr:LPWM", "blue", [ "h-197.48", "v167.07" ] ],
+    [ "esp:3V3", "drv_fr:R_EN", "red", [ "h-187.88", "v224.67" ] ],
+    [ "esp:3V3", "drv_fr:L_EN", "red", [ "h-178.28", "v234.27" ] ],
+    [ "esp:3V3", "drv_fr:VCC", "red", [ "h-168.68", "v253.47" ] ],
+    [ "esp:5V", "drv_fr:B+", "red", [ "h-159.08", "v109.47" ] ],
+    [ "drv_fr:M+", "mot_fr:IN1", "blue", [ "v0" ] ],
+    [ "drv_fr:M-", "mot_fr:IN2", "blue", [ "v0" ] ],
+    [ "esp:5V", "mot_fr:VCC", "red", [ "h-149.48", "v80.67" ] ],
+    [ "esp:10", "mot_fr:ENCA", "blue", [ "h-139.88", "v128.67" ] ],
+    [ "esp:11", "mot_fr:ENCB", "blue", [ "h-130.28", "v109.47" ] ],
+    [ "esp:18", "drv_rl:RPWM", "orange", [ "v0" ] ],
+    [ "esp:19", "drv_rl:LPWM", "orange", [ "v0" ] ],
+    [ "esp:3V3", "drv_rl:R_EN", "red", [ "h-120.68", "v454.67" ] ],
+    [ "esp:3V3", "drv_rl:L_EN", "red", [ "h-111.08", "v464.27" ] ],
+    [ "esp:3V3", "drv_rl:VCC", "red", [ "h-101.48", "v483.47" ] ],
+    [ "esp:5V", "drv_rl:B+", "red", [ "h-91.88", "v339.47" ] ],
+    [ "drv_rl:M+", "mot_rl:IN1", "orange", [ "v0" ] ],
+    [ "drv_rl:M-", "mot_rl:IN2", "orange", [ "v0" ] ],
+    [ "esp:5V", "mot_rl:VCC", "red", [ "h-82.28", "v310.67" ] ],
+    [ "esp:20", "mot_rl:ENCA", "orange", [ "v0" ] ],
+    [ "esp:21", "mot_rl:ENCB", "orange", [ "v0" ] ],
+    [ "esp:22", "drv_rr:RPWM", "purple", [ "v0" ] ],
+    [ "esp:23", "drv_rr:LPWM", "purple", [ "h-16.18", "v636.67" ] ],
+    [ "esp:3V3", "drv_rr:R_EN", "red", [ "h-72.68", "v684.67" ] ],
+    [ "esp:3V3", "drv_rr:L_EN", "red", [ "h-63.08", "v696.49", "h342.4" ] ],
+    [ "esp:3V3", "drv_rr:VCC", "red", [ "h-15.08", "v811.69", "h480", "v-98.22" ] ],
+    [ "esp:5V", "drv_rr:B+", "red", [ "v5.29", "h-24.68", "v691.2", "h480", "v-127.02" ] ],
+    [ "drv_rr:M+", "mot_rr:IN1", "purple", [ "v0" ] ],
+    [ "drv_rr:M-", "mot_rr:IN2", "purple", [ "v-26.58", "h354.04", "v45.78" ] ],
+    [ "esp:5V", "mot_rr:VCC", "red", [ "v-4.31", "h-34.28", "v528", "h653.6" ] ],
+    [ "esp:4", "mot_rr:ENCA", "purple", [ "h-53.48", "v811.69", "h854.4", "v-155.82" ] ],
+    [ "esp:5", "mot_rr:ENCB", "purple", [ "h-43.88", "v600.49", "h844.8", "v36.18" ] ]
+  ],
+  "dependencies": {}
+}
