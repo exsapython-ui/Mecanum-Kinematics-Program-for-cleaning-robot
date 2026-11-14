@@ -1,0 +1,7 @@
+{
+  "name": "DC Motor + Encoder",
+  "author": "Nama Anda",
+  "pins": ["VCC", "GND", "IN1", "IN2", "ENCA", "ENCB"],
+  "controls": [],
+  "display": { "width": 160, "height": 80 }
+}
