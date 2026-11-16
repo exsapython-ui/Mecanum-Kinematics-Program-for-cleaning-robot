@@ -12,6 +12,13 @@
       "left": 620,
       "attrs": { "maxRpm": "200", "ppr": "11", "tauMs": "80" }
     },
+    {
+      "type": "chip-Bno055",
+      "id": "imu1",
+      "top": 279.42,
+      "left": -350.4,
+      "attrs": { "yawRate": "0", "heading": "0", "roll": "0", "pitch": "0" }
+    },  
     { "type": "chip-bts7960", "id": "drv_fr", "top": 230, "left": 280, "attrs": { "loadA": "5" } },
     {
       "type": "chip-dc-motor-encoder",
