@@ -1,0 +1,12 @@
+{
+  "name": "BNO055 IMU",
+  "author": "Nama Anda",
+  "pins": ["VIN", "GND", "SDA", "SCL"],
+  "controls": [
+    { "id": "yawRate", "label": "Yaw rate (deg/s, + = searah jarum jam)", "type": "range", "min": -180, "max": 180, "step": 1 },
+    { "id": "heading", "label": "Set heading (deg)", "type": "range", "min": 0, "max": 360, "step": 1 },
+    { "id": "roll", "label": "Roll (deg)", "type": "range", "min": -90, "max": 90, "step": 1 },
+    { "id": "pitch", "label": "Pitch (deg)", "type": "range", "min": -90, "max": 90, "step": 1 }
+  ],
+  "display": { "width": 160, "height": 80 }
+}
